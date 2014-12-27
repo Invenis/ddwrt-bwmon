@@ -24,6 +24,11 @@
 								Device
 							</div>
 						</th>
+						<th>
+							<div class="cell-padding">
+								Hostname
+							</div>
+						</th>
 						<th class="cell-right min-width">
 							Total
 						</th>
@@ -50,6 +55,11 @@
 							ng-class="{ 'active-traffic': getDeviceTotalRate(device) > 0 }">
 						<td class="name">
 							<div class="cell-padding" title="Mac Address: {{ device.mac.toUpperCase() }}">
+								{{ device.mac }}
+							</div>
+						</td>
+						<td class="name">
+							<div class="cell-padding" title="Hostname: {{ getName(device.mac) }}">
 								{{ getName(device.mac) }}
 							</div>
 						</td>
@@ -79,6 +89,8 @@
 							<div class="cell-padding">
 								Totals
 							</div>
+						</td>
+						<td class="cell-right min-width">
 						</td>
 						<td class="cell-right min-width">
 							{{ getSize(getTotals(usageData)) }}
